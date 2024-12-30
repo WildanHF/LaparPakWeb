@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FDC100;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    max-width: 850px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgb(0, 0, 0, 0.1);
+}
+
+.login{
+    width: 400px;
+}
+
+form{
+    width: 250px;
+    margin: 60px auto;
+}
+
+h1{
+    margin: 20px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+hr{
+    border-top: 2px solid #FDC100;
+}
+
+.right {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 400px;           
+}
+
+.right img{
+    width: 250px;
+    height: 250px;
+    border-top-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+form label{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+input{
+    width: 100%;
+    margin: 2px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 252px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: #FDC100;
+}
+
+button:hover{
+    background: red;
+}
+
+p{
+    text-align: center;
+    padding: 10px;
+}
+
+.social-text{
+    text-align: center;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center; /* Untuk menengahkan tombol secara horizontal */
+}
+
+.social-icon{
+    height: 46px;
+    width: 46px;
+    border: 1px solid #333;
+    margin: 0 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-icon:hover{
+    color: #4481eb;
+    border-color:#4481eb ;
+}
+
+.lupa-text a:hover{
+    color: red;
+    transition: 0.3s;
+}
+
+
+/* Tambahan untuk responsif pada mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        max-width: 80%;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .login {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .right {
+        display: none; /* Sembunyikan gambar di sisi kanan pada tampilan mobile */
+    }
+
+    form {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    /* Menampilkan tombol sosial secara horizontal saat hanya dua tombol */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* Memberikan jarak antar tombol */
+}
+
+.social-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* Pengaturan responsif: Tampilkan secara kolom jika layar lebih kecil */
+@media (max-width: 480px) {
+    .social-media {
+        flex-direction: row; /* Pastikan tetap horizontal di mobile */
+        gap: 0.5rem; /* Jarak antar tombol */
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 16px;
+    }
+
+    form label {
+        font-size: 14px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+}
