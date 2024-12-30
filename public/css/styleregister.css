@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FDC100;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    max-width: 850px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgb(0, 0, 0, 0.1);
+}
+
+.registrasi{
+    width: 400px;
+}
+
+form{
+    width: 250px;
+    margin: 60px auto;
+}
+
+h1{
+    margin: 20px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+hr{
+    border-top: 2px solid #FDC100;
+}
+
+.right {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 400px;           
+}
+
+.right img{
+    width: 250px;
+    height: 250px;
+    border-top-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+form label{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+input{
+    width: 100%;
+    margin: 2px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 252px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: #FDC100;
+}
+
+button:hover{
+    background: red;
+}
+
+.social-text{
+    text-align: center;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center; /* Untuk menengahkan tombol secara horizontal */
+}
+
+.social-icon{
+    height: 46px;
+    width: 46px;
+    border: 1px solid #333;
+    margin: 0 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-icon:hover{
+    color: #4481eb;
+    border-color:#4481eb ;
+}
+
+.akun-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.akun-text a:hover{
+    color: red;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Mengatur layout menjadi kolom di perangkat kecil */
+        max-width: 80%; /* Mengisi seluruh layar */
+        border-radius: 15px; 
+    }
+
+    .registrasi {
+        width: 100%; /* Isi layar penuh di mobile */
+    }
+
+    .right {
+        display: none; /* Sembunyikan gambar di bagian kanan pada mobile */
+    }
+
+    form {
+        width: 100%; /* Form mengikuti lebar container */
+        margin: 20px auto; /* Mengurangi margin di sekitar form */
+        padding: 0 20px; /* Tambahkan padding di kiri dan kanan agar tidak terlalu menempel */
+    }
+
+    button {
+        width: 100%; /* Tombol submit memenuhi lebar layar di mobile */
+    }
+
+    h1 {
+        font-size: 24px; /* Sesuaikan ukuran teks heading di mobile */
+    }
+    
+    .social-media {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 480px) {
+    form label, input {
+        font-size: 14px; /* Kurangi ukuran font di perangkat yang sangat kecil */
+    }
+
+    .akun-text {
+        font-size: 12px; /* Sesuaikan ukuran teks */
+    }
+
+    .social-icon {
+        height: 40px;
+        width: 40px;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
