@@ -25,7 +25,7 @@
                 <button type="button" id="" onclick="submitLogin()">Login</button>
 
                 <p class="lupa-text">
-                    <a href="/">Forgot Password</a>
+                    <a href="/verifikasi-email">Forgot Password</a>
                 </p>
                 <p class="social-text">OR</p>
                 <div class="social-media">

@@ -22,7 +22,7 @@
       </button>
       <button class="notification-button" onclick="location.href='{{ url('/notifications') }}'">
         <span class="material-icons">notifications</span>
-      </button>
+      </button> 
       <button class="profile-button" onclick="location.href='profile.html'">
         <span class="material-icons">account_circle</span>
       </button>
