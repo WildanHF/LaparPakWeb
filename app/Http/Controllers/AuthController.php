@@ -13,6 +13,14 @@ class AuthController extends Controller
     }
 
     public function register(){
-        return view('Auth.register');
+        return view('Auth.verifikasi');
+    }
+
+    public function verifikasi(){
+        return view('Auth.verifikasi');
+    }
+
+    public function resetPassword(){
+        return view('Auth.resetPass');
     }
 }

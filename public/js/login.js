@@ -1,4 +1,4 @@
-const apiRegisterUrl = 'http://localhost:3000/login'; // Ganti dengan endpoint API registrasi Anda
+const apiLoginUrl = 'http://localhost:3000/login'; // Ganti dengan endpoint API registrasi Anda
 
 async function submitLogin() {
     event.preventDefault(); 
