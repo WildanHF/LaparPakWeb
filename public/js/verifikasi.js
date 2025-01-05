@@ -1,4 +1,4 @@
-const apiVerifikasiUrl = 'http://localhost:3000/request-reset-password'; // Ganti dengan endpoint API registrasi Anda
+const apiVerifikasiUrl = 'http://localhost:3000/Account/request-reset'; // Ganti dengan endpoint API registrasi Anda
 
 // Pastikan ini di file "verifikasi.js"
 $(document).ready(function () {
@@ -19,7 +19,7 @@ $(document).ready(function () {
 
         try {
             // Kirim permintaan POST ke API Express
-            const response = await fetch('http://localhost:3000/request-reset-password', {
+            const response = await fetch('http://localhost:3000/Account/request-reset', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

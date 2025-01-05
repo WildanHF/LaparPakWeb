@@ -1,4 +1,4 @@
-const apiLoginUrl = 'http://localhost:3000/login'; // Ganti dengan endpoint API registrasi Anda
+const apiLoginUrl = 'http://localhost:3000/Account/login'; // Ganti dengan endpoint API registrasi Anda
 
 async function submitLogin() {
     event.preventDefault(); 
@@ -22,7 +22,7 @@ async function submitLogin() {
             };
 
             // Mengirimkan request POST menggunakan fetch ke API login
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch('http://localhost:3000/Account/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
