@@ -9,19 +9,26 @@ class Campaign extends Model
 {
     use HasFactory;
 
-    // Nama tabel
-    protected $table = 'campaigns';
-
-    // Kolom yang dapat diisi secara massal
     protected $fillable = [
         'name',
         'description',
-        'goal',
+        'goal_amount',
+        'current_amount', // Ensure this attribute is fillable
     ];
 
-    // Relasi ke tabel Donations
-    public function donations()
+    const STATUS_ACTIVE = 'ACTIVE';
+    const STATUS_INACTIVE = 'INACTIVE';
+    const STATUS_COMPLETED = 'COMPLETED';
+
+    // Relationship with Payment model
+    public function payments()
     {
-        return $this->hasMany(Donation::class, 'campaign_id');
+        return $this->hasMany(Payment::class);
+    }
+
+    // Helper method to check if campaign is active
+    public function isActive()
+    {
+        return $this->status === self::STATUS_ACTIVE;
     }
 }
