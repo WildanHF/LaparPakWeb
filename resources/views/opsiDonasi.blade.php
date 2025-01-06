@@ -16,7 +16,7 @@
       <img src="{{ asset('assets/logo web.png') }}" alt="Merawat Indonesia" class="logo-img">
     </div>
     <div class="nav-buttons">
-      <button class="home-button" onclick="location.href='{{ url('/') }}'">
+      <button class="home-button" onclick="location.href='{{ url('/homepage') }}'">
         <span class="material-icons">home</span>
       </button>
       <button class="notification-button" onclick="location.href='{{ url('/notifications') }}'">
@@ -32,84 +32,34 @@
   <div class="program-container">
     <div class="program">
       <div class="program-content">
-        <img src="{{ asset('assets/donimg.jpg') }}" alt="img program">
-        <h2>{{ $campaign->name }}</h2>
+      <img src="{{ asset('image/foodDon.jpg') }}" alt="img program">
+      <h2>{{ $campaign->name }}</h2>
         <p>{{ $campaign->description }}</p>
 
-        <!-- Buttons below the image -->
-        <div class="donation-options">
-          <button onclick="showMoneyOptions()">Donasi Dana</button>
-          <button onclick="showFoodForm()">Donasi Pangan</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-
-        <!-- Money options, initially hidden -->
         <div id="form-dana">
-          <div class="dana-button" id="money-options" style="display: none;">
-            <!-- <h3>Pilih Nominal</h3>
-            <button>Rp25.000</button>
-            <button>Rp50.000</button>
-            <button>Rp100.000</button> -->
+
 
             <h4>Masukan Nominal</h4>
-            <input type="text" id="nominal" name="nominal" required>
-            <button type="submit">Submit</button>
-
-
-          </div>
+            <form action="{{ route('submit.nominal') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <input type="text" id="nominal" name="nominal" class="form-control" required>
+                </div>
+                <input type="hidden" name="campaign_id" value="{{ $campaign->id }}">
+                <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+            </form>
         </div>
-        <div id="form-pangan">
-          <!-- Food form, initially hidden -->
-          <div id="food-form" style="display: none;">
-            <h3>Keterangan Donasi</h3>
-            <div class="form-container">
-              <form>
-                <div class="row">
-                  <label for="food-type">Nama Makanan:</label>
-                  <input type="text" id="food-type" name="food-type" required>
-                </div>
+    </div>
 
-                <div class="row">
-                  <label for="Deskripsi-makanan">Deskripsi Makanan:</label>
-                  <input type="text" id="food-type" name="food-type" required>
-                </div>
-
-                <div class="row">
-                  <label for="NamaDonatur">Nama Donatur:</label>
-                  <input type="text" id="food-type" name="food-type" required>
-                </div>
-
-                <div class="row">
-                  <label for="Nomor-hp">Nomor Hp:</label>
-                  <input type="text" id="food-type" name="food-type" required>
-                </div>
-
-                <div class="row">
-                  <label for="kota-kec">Kota & Kecamatan:</label>
-                  <input type="text" id="food-type" name="food-type" required>
-                </div>
-
-                <div class="row">
-                  <label for="Alamat">Alamat Lengkap:</label>
-                  <input type="text" id="food-type" name="food-type" required>
-                </div>
-
-                <div class="row">
-                  <label for="kode-pos">Kode Pos:</label>
-                  <input type="text" id="food-type" name="food-type" required>
-                </div>
-                <button type="submit">Submit</button>
-              </form>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   </div>
 
+
+       
+    
   <!-- WEBDETAILS -->
   <footer>
     <div class="footer">
@@ -137,5 +87,4 @@
   <!-- Include the donateOpsi.js script -->
   <script src="{{ asset('js/donateOpsi.js') }}"></script>
 </body>
-
 </html>
