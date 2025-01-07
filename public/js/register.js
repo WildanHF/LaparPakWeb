@@ -1,4 +1,4 @@
-const apiRegisterUrl = 'http://localhost:3000/Account/registrasi'; // Ganti dengan endpoint API registrasi Anda
+const apiRegisterUrl = 'http://localhost:3000/api/Account/registrasi'; // Ganti dengan endpoint API registrasi Anda
 
 async function submitRegister() {
     event.preventDefault(); // Mencegah form melakukan submit default
@@ -24,7 +24,7 @@ async function submitRegister() {
         };
 
         // Mengirim permintaan ke API registrasi
-        const response = await fetch('http://localhost:3000/Account/registrasi', {
+        const response = await fetch('http://localhost:3000/api/Account/registrasi', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

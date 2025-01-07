@@ -13,7 +13,7 @@ use App\Http\Controllers\PaymentController;
 
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/register');
 });
 
 Route::get('/donate', [PaymentController::class, 'index']);
@@ -23,7 +23,7 @@ Route::post('/donate', [PaymentController::class, 'store']);
 Route::get('/payment', [PaymentController::class, 'index']);
 Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
 Route::get('/payment/success', [PaymentController::class, 'success'])->name('success');
-Route::get('/homepage', [CampaignController::class, 'index1'])->name('homepage.login');
+Route::get('/homepage', [CampaignController::class, 'index1'])->name('homepagelogin');
 Route::get('/opsi-donasi/{id}', [CampaignController::class, 'show1']);
 Route::post('/submit-nominal', [PaymentController::class, 'submitNominal'])->name('submit.nominal');
 Route::get('/payment/{id}', [PaymentController::class, 'getById'])->name('payment.details');
@@ -44,10 +44,10 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/verifikasi-email', [AuthController::class, 'verifikasi']);
-Route::get('/reset-password', [AuthController::class, 'resetPassword']);
+Route::get('/api/reset-password', [AuthController::class, 'resetPassword']);
 // Route::get('/', [CampaignController::class, 'index']);
 
 
