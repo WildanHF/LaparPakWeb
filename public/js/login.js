@@ -1,4 +1,4 @@
-const apiLoginUrl = 'http://localhost:3000/Account/login'; // Ganti dengan endpoint API registrasi Anda
+const apiLoginUrl = 'http://localhost:3000/api/Account/login'; // Ganti dengan endpoint API registrasi Anda
 
 async function submitLogin() {
     event.preventDefault(); 
@@ -22,7 +22,7 @@ async function submitLogin() {
             };
 
             // Mengirimkan request POST menggunakan fetch ke API login
-            const response = await fetch('http://localhost:3000/Account/login', {
+            const response = await fetch('http://localhost:3000/api/Account/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ async function submitLogin() {
 
                 // Redirect ke halaman dashboard atau tujuan lainnya
                 alert('Login berhasil! Redirecting...');
-                window.location.href = '/'; // Ganti dengan URL tujuan Anda
+                window.location.href = '/homepage'; // Ganti dengan URL tujuan Anda
             } else {
                 const error = await response.json();
                 alert('Login gagal: ' + (error.message || 'Silakan coba lagi.'));
