@@ -34,7 +34,7 @@
                 <input type="password" id="confirmPassword" placeholder="Masukan kembali password">
                 <span class="error-message" id="confirmPasswordError"></span>
 
-                <button type="button" id="registerButton">Registrasi</button>
+                <button type="button" id="registerButton" onclick="submitRegister(event)">Registrasi</button>
 
                 <p class="social-text">OR</p>
                 <div class="social-media">

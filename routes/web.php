@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ContactUsController;
+
 
 
 // Route::get('/', function () {
@@ -30,6 +32,8 @@ Route::get('/payment/{id}', [PaymentController::class, 'getById'])->name('paymen
 Route::post('/submit-nominal', [PaymentController::class, 'submitNominal'])->name('submit.nominal');
 Route::get('/payment/{id}', [PaymentController::class, 'getById'])->name('payment.details');
 Route::post('/payment/update-status', [PaymentController::class, 'updateStatus'])->name('payment.updateStatus');
+Route::get('/ContactUs', [ContactUsController::class, 'index']);
+Route::post('/api/contact_us', [ContactUsController::class, 'store']);
 
 // Admin routes
 Route::prefix('admin')->group(function () {
@@ -47,7 +51,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/verifikasi-email', [AuthController::class, 'verifikasi']);
-Route::get('/reset-password', [AuthController::class, 'resetPassword']);
+Route::get('/api/reset-password', [AuthController::class, 'resetPassword']);
 // Route::get('/', [CampaignController::class, 'index']);
 
 
