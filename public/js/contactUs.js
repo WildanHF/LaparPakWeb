@@ -10,7 +10,7 @@ async function submitContactForm(event) {
     };
 
     try {
-        const response = await fetch('/api/contact_us', {
+        const response = await fetch('http://localhost:3000//api/contact_us', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,6 +19,7 @@ async function submitContactForm(event) {
         });
 
         const data = await response.json();
+        console.log('Response:', data);
 
         if (response.ok) {
             alert('Message sent successfully!');
@@ -33,6 +34,35 @@ async function submitContactForm(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', submitContactForm);
+    document.getElementById('contact-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+
+        try {
+            const response = await fetch('http://localhost:3000//api/contact_us', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json',
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert('Registration successful! Redirecting to login...');
+                
+                
+            } else {
+                const error = await response.json();
+                alert('Registration failed: ' + (error.message || 'Please try again.'));
+            }
+
+            const data = await response.json();
+            alert('Success: ' + data.message); // Tambahkan pesan alert untuk sukses
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error submitting contact form: ' + error.message);
+        }
+    });
 });

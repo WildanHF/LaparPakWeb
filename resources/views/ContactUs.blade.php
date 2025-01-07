@@ -43,7 +43,7 @@
                 <div class="nav-item">
                     <div class="dropdown-header">Profile</div>
                     <div class="dropdown-content">
-                        <div class="nav-item" onclick="window.location.href='profile.html'">Edit Profile</div>
+                        <div class="nav-item" onclick="window.location.href='/profile'">Edit Profile</div>
                     </div>
                 </div>
                 <div class="nav-item active">Contact Us</div>
@@ -60,12 +60,12 @@
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label class="form-label required">First Name</label>
-                        <input type="text" class="form-input" id="first_name" required>
+                        <input type="text" class="form-input" id="firstName" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label required">Last Name</label>
-                        <input type="text" class="form-input" id="last_name" required>
+                        <input type="text" class="form-input" id="lastName" required>
                     </div>
 
                     <div class="form-group">
@@ -75,7 +75,7 @@
 
                     <div class="form-group">
                         <label class="form-label required">Phone Number</label>
-                        <input type="tel" class="form-input" id="phone_number" required>
+                        <input type="tel" class="form-input" id="phoneNumber" required>
                     </div>
 
                     <div class="form-group">
