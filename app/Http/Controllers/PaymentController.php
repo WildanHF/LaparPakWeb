@@ -10,8 +10,8 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        $payments = Payment::all();
-        return view('payments.index', ['payments' => $payments]);
+        $payments = Payment::with(['user', 'campaign'])->latest()->get();
+        return view('admin.payments.index', compact('payments'));
     }
 
     public function store(Request $request)
@@ -69,11 +69,11 @@ class PaymentController extends Controller
         ]);
     }
 
-    public function getById($id)
-    {
-        $payment = Payment::findOrFail($id);
-        return view('payment-details', ['payment' => $payment]);
-    }
+    // public function getById($id)
+    // {
+    //     $payment = Payment::findOrFail($id);
+    //     return view('payment-details', ['payment' => $payment]);
+    // }
 
     public function updateStatus(Request $request)
 {

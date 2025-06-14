@@ -31,7 +31,7 @@ class Payment extends Model
     }
     // File: /v:/tubes/tubes/app/Models/Campaign.php
     
-
+    
     // Helper method to check if payment is paid
     public function isPaid()
     {

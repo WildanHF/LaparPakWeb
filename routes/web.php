@@ -34,6 +34,9 @@ Route::get('/payment/{id}', [PaymentController::class, 'getById'])->name('paymen
 Route::post('/payment/update-status', [PaymentController::class, 'updateStatus'])->name('payment.updateStatus');
 Route::get('/ContactUs', [ContactUsController::class, 'index']);
 Route::post('/api/contact_us', [ContactUsController::class, 'store']);
+Route::get('/homepage', [CampaignController::class, 'index1'])->name('homepage.login');
+
+
 
 // Admin routes
 Route::prefix('admin')->group(function () {
@@ -44,6 +47,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/campaigns/{campaign}/edit', [CampaignController::class, 'edit'])->name('admin.campaigns.edit');
     Route::put('/campaigns/{campaign}', [CampaignController::class, 'update'])->name('admin.campaigns.update');
     Route::delete('/campaigns/{campaign}', [CampaignController::class, 'destroy'])->name('admin.campaigns.destroy');
+    Route::get('/payments', [PaymentController::class, 'index'])->name('admin.payments.index');
+    Route::resource('campaigns', CampaignController::class, ['as' => 'admin']);
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');

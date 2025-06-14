@@ -1,9 +1,11 @@
 <!-- filepath: /v:/tubes/tubes/resources/views/admin/campaigns/index.blade.php -->
 @extends('layouts.admin')
 
+
 @section('content')
     <h1>Campaigns</h1>
     <a href="{{ route('admin.campaigns.create') }}" class="btn btn-primary">Create Campaign</a>
+    <link rel="stylesheet" href="{{ asset('css/adminCampaign.css') }}">
     <table class="table">
         <thead>
             <tr>
